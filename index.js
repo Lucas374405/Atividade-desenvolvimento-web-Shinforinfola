@@ -7,14 +7,19 @@ app.set('view engine', 'handlebars');
 
 app.get('/', (req, res) => {
   res.render('home', {
-    titulo: 'Mini Netflix',
-    descricao: 'Os melhores filmes em um só lugar.'
+    titulo: 'Atividade',
+    descricao: 'Precisa de descrição?'
   });
 });
 
 app.listen(3000, () => {
-  console.log('Servidor em funcionamento');
+  console.log('Servidor funcionando');
 });
+
+app.get('/', (req, res) => {
+    res.send('Bem-vindo ao sistema');
+});
+
 
 app.get('/sobre', (req, res) => {
     res.send('sobre');
@@ -35,4 +40,30 @@ app.get('/erro', (req, res) => {
     
 app.get ('/inicio', (req, res) => {
     res.redirect('/');
+});
+
+app.get ('/Usuario/:id', (req, res) => {
+    res.send(`Usuario: ${req.params.id}`);
+});
+
+app.get ('/produto/:nome', (req, res) => {
+    res.send(`Produto: ${req.params.nome}`);
+});
+
+app.get ('/filme/:id/:nome', (req, res) => {
+    res.send (`
+        Filme: ${req.params.nome} <br>
+        ID: ${req.params.id}
+    `)
+});
+
+app.get ('/buscar', (req, res) => {
+    res.send (`buscar: ${req.query.nome}`);
+});
+
+app.get ('/produto', (req, res) => {
+    res.send (`
+       Categoria: ${req.query.categoria} <br>
+       Página: ${req.query.pagina} 
+        `);
 });
