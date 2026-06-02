@@ -46,9 +46,6 @@ app.get('/filmes', (req, res) => {
     });
 });
 
-
-
-
 app.get('/condicional', (req, res) => {
     res.render('condicional', {
       usuario: 'Lucas e Vinicius',
