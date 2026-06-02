@@ -1,0 +1,19 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1><strong>Lista de Filmes</strong></h1>
+   
+    <ul>
+        {{#each filmes}}
+            <li>
+                <strong>{{this.titulo}}</strong> - Ano: {{this.ano}}
+            </li>
+        {{/each}}
+    </ul>
+
+</body>
+</html>
